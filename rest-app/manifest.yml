@@ -1,0 +1,14 @@
+applications:
+- name: restapp
+  buildpacks:
+  - nodejs_buildpack
+  command: node app.js
+  disk_quota: 500M
+  instances: 1
+  memory: 256M
+  routes:
+  - route: restapp-2.cfapps.eu10.hana.ondemand.com
+  services:
+  - my-destination
+  - my-xsuaa
+  stack: cflinuxfs3
